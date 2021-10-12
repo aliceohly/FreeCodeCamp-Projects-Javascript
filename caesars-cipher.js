@@ -4,26 +4,26 @@
 // All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
 
 function rot13(str) {
-    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
-    let reg = /[A-Z]/
-    var resultArray = str.split('').map(decipher)
-    
-    // Javascript does not take negative index
-    function decipher(value){
-      if (reg.test(value)){
-        if (alphabet.indexOf(value) >= 13){
-          return alphabet[alphabet.indexOf(value)-13]
-        } else {
-          return alphabet[26-(13-alphabet.indexOf(value))]
-        }
+  let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  let reg = /[A-Z]/;
+  var resultArray = str.split("").map(decipher);
+
+  // Javascript does not take negative index
+  function decipher(value) {
+    if (reg.test(value)) {
+      if (alphabet.indexOf(value) >= 13) {
+        return alphabet[alphabet.indexOf(value) - 13];
+      } else {
+        return alphabet[26 - (13 - alphabet.indexOf(value))];
       }
-      return value
     }
-  
-    // console.log(resultArray)
-    var resultString = resultArray.join('')
-    // console.log(resultString)
-    return resultString;
+    return value;
   }
-  
-  rot13("SERR PBQR PNZC");
+
+  // console.log(resultArray)
+  var resultString = resultArray.join("");
+  // console.log(resultString)
+  return resultString;
+}
+
+rot13("SERR PBQR PNZC");
